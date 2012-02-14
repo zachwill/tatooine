@@ -27,12 +27,8 @@ var obi = new L.Marker(new L.LatLng(33.740833, 10.734951), {icon: rebel}),
     skywalker = new L.Marker(new L.LatLng(33.347272, 10.492051), {icon: empire}),
     homestead = new L.Marker(new L.LatLng(33.54253, 9.967341), {icon: rebel});
 
-map.addLayer(obi)
-   .addLayer(toshi)
-   .addLayer(lars)
-   .addLayer(mos)
-   .addLayer(sith)
-   .addLayer(canyon)
-   .addLayer(tataouine)
-   .addLayer(skywalker)
-   .addLayer(homestead)
+var group = new L.LayerGroup([
+  obi, toshi, lars, mos, sith, canyon, tataouine, skywalker, homestead
+]);
+
+map.addLayer(group)
