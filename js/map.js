@@ -68,9 +68,11 @@ var markers = [
 
 for (var i = 0; i < markers.length; i++) {
   (function(){
-    var location = markers[i];
-    map.addLayer(new L.Marker(location.latlng, {
-      icon: location.icon
-    }))
+    var loc = markers[i],
+        marker = new L.Marker(loc.latlng, {
+          icon: loc.icon
+        });
+    marker.bindPopup(loc.location)
+    map.addLayer(marker)
   })();
 };
