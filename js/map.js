@@ -7,31 +7,31 @@ var map = new L.Map('map', {
 });
 
 var StarWars = L.Icon.extend({
-  iconUrl: '/img/rebel.png',
+  iconUrl: '/img/rebels.png',
   shadowUrl: '/img/shadow.png',
   iconSize: new L.Point(27, 37),
   shadowSize: new L.Point(47, 36),
   iconAnchor: new L.Point(14, 36)
 });
 
-var rebel = new StarWars(),
+var rebels = new StarWars(),
     empire = new StarWars('/img/empire.png');
 
 var markers = [
   {
     latlng: new L.LatLng(33.740833, 10.734951),
     location: "Obi Wan Kenobi House",
-    icon: rebel
+    icon: rebels
   },
   {
     latlng: new L.LatLng(33.831411, 10.747936),
     location: "Toshi Station",
-    icon: rebel
+    icon: rebels
   },
   {
     latlng: new L.LatLng(33.842921, 7.779071),
     location: "Lars House",
-    icon: rebel
+    icon: rebels
   },
   {
     latlng: new L.LatLng(33.994296, 7.842677),
@@ -46,12 +46,12 @@ var markers = [
   {
     latlng: new L.LatLng(34.033572, 8.281771),
     location: "Canyon",
-    icon: rebel
+    icon: rebels
   },
   {
     latlng: new L.LatLng(32.788361, 10.514989),
     location: "Tataouine",
-    icon: rebel
+    icon: rebels
   },
   {
     latlng: new L.LatLng(33.347272, 10.492051),
@@ -61,7 +61,7 @@ var markers = [
   {
     latlng: new L.LatLng(33.54253, 9.967341),
     location: "Lars Homestead Exterior",
-    icon: rebel
+    icon: rebels
   }
 ];
 
