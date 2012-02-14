@@ -19,9 +19,9 @@ var rebel = new StarWars(),
 
 var markers = [
   {
-   latlng: new L.LatLng(33.740833, 10.734951),
-   location: "Obi Wan Kenobi House",
-   icon: rebel
+    latlng: new L.LatLng(33.740833, 10.734951),
+    location: "Obi Wan Kenobi House",
+    icon: rebel
   },
   {
     latlng: new L.LatLng(33.831411, 10.747936),
