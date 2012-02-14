@@ -6,7 +6,7 @@ var map = new L.Map('map', {
   zoom: 8
 });
 
-var Icon = L.Icon.extend({
+var StarWars = L.Icon.extend({
   iconUrl: '/img/rebel.png',
   shadowUrl: '/img/shadow.png',
   iconSize: new L.Point(27, 37),
@@ -14,21 +14,63 @@ var Icon = L.Icon.extend({
   iconAnchor: new L.Point(14, 36)
 });
 
-var rebel = new Icon(),
-    empire = new Icon('/img/empire.png');
+var rebel = new StarWars(),
+    empire = new StarWars('/img/empire.png');
 
-var obi = new L.Marker(new L.LatLng(33.740833, 10.734951), {icon: rebel}),
-    toshi = new L.Marker(new L.LatLng(33.831411, 10.747936), {icon: rebel}),
-    lars = new L.Marker(new L.LatLng(33.842921, 7.779071), {icon: rebel}),
-    mos = new L.Marker(new L.LatLng(33.994296, 7.842677), {icon: empire}),
-    sith = new L.Marker(new L.LatLng(34.015353, 7.911444), {icon: empire}),
-    canyon = new L.Marker(new L.LatLng(34.033572, 8.281771), {icon: rebel}),
-    tataouine = new L.Marker(new L.LatLng(32.788361, 10.514989), {icon: rebel}),
-    skywalker = new L.Marker(new L.LatLng(33.347272, 10.492051), {icon: empire}),
-    homestead = new L.Marker(new L.LatLng(33.54253, 9.967341), {icon: rebel});
+var markers = [
+  {
+   latlng: new L.LatLng(33.740833, 10.734951),
+   location: "Obi Wan Kenobi House",
+   icon: rebel
+  },
+  {
+    latlng: new L.LatLng(33.831411, 10.747936),
+    location: "Toshi Station",
+    icon: rebel
+  },
+  {
+    latlng: new L.LatLng(33.842921, 7.779071),
+    location: "Lars House",
+    icon: rebel
+  },
+  {
+    latlng: new L.LatLng(33.994296, 7.842677),
+    location: "Mos Espa",
+    icon: empire
+  },
+  {
+    latlng: new L.LatLng(34.015353, 7.911444),
+    location: "Sith Infiltrator",
+    icon: empire
+  },
+  {
+    latlng: new L.LatLng(34.033572, 8.281771),
+    location: "Canyon",
+    icon: rebel
+  },
+  {
+    latlng: new L.LatLng(32.788361, 10.514989),
+    location: "Tataouine",
+    icon: rebel
+  },
+  {
+    latlng: new L.LatLng(33.347272, 10.492051),
+    location: "Anakin Skywalker House",
+    icon: empire
+  },
+  {
+    latlng: new L.LatLng(33.54253, 9.967341),
+    location: "Lars Homestead Exterior",
+    icon: rebel
+  }
+];
 
-var group = new L.LayerGroup([
-  obi, toshi, lars, mos, sith, canyon, tataouine, skywalker, homestead
-]);
 
-map.addLayer(group)
+for (var i = 0; i < markers.length; i++) {
+  (function(){
+    var location = markers[i];
+    map.addLayer(new L.Marker(location.latlng, {
+      icon: location.icon
+    }))
+  })();
+};
